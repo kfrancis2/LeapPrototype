@@ -43,7 +43,7 @@ class SampleListener extends Listener {
         probe.analyzeFrame(frame);
 
         InteractionBox ibox = frame.interactionBox();
-        Hand hand = frame.hands().rightmost();
+        Hand hand = frame.hands().frontmost();
         Vector position = hand.palmPosition();
         Vector direction = hand.direction();
 
@@ -51,8 +51,8 @@ class SampleListener extends Listener {
         System.out.println("Frame id: " + frame.id()
                 + ", timestamp: " + frame.timestamp()
                 + ", hands: " + frame.hands().count()
-                + ", hand position: " + frame.hands().rightmost().palmPosition()
-                + ", interaction box: " + ibox.toString());
+                + ", hand position: " + frame.hands().frontmost().palmPosition()
+                + ", palm normal: " + hand.palmNormal());
 
     }
 }
